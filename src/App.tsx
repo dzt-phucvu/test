@@ -1,9 +1,6 @@
-function App() {
-  return (
-    <>
-      <div className="text-red-500">Hello world</div>
-    </>
-  );
-}
 
-export default App;
+import FabricEditor from './FabricEditor/FabricEditor';
+
+export default function App() {
+  return <FabricEditor />;
+}
