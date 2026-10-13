@@ -1,9 +1,7 @@
 
 import { Card, Space } from 'antd';
 
-import { useFabricCanvas } from './hooks/useFabricCanvas.ts';
-import { useFabricObjects } from './hooks/useFabricObjects.ts';
-
+import { useFabricEditor } from './hooks/useFabricEditor';
 import { EditorToolbar } from './components/EditorToolbar';
 import { EditorCanvas } from './components/EditorCanvas';
 import { PropertiesPanel } from './components/PropertiesPanel';
@@ -11,20 +9,14 @@ import { PropertiesPanel } from './components/PropertiesPanel';
 export default function FabricEditor() {
   const {
     elementRef,
-    canvasRef,
     selectedObject,
-  } = useFabricCanvas();
-
-  const {
     addRectangle,
     addText,
     changeColor,
     changeText,
     deleteSelected,
     exportPNG,
-  } = useFabricObjects({
-    getCanvas: () => canvasRef.current,
-  });
+  } = useFabricEditor();
 
   return (
     <Card title="Fabric.js Editor">
